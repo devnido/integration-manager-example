@@ -14,9 +14,6 @@ export class EnvConfigService {
     return (this.configService.get<string>('NODE_ENV') ?? Environment.DEVELOPMENT) as Environment
   }
 
-  get externalServiceApiUrl(): string {
-    return this.configService.get<string>('EXTERNAL_SERVICE_API_URL') ?? 'http://localhost:3500'
-  }
   get awsRegion(): string {
     return this.configService.get<string>('AWS_REGION') ?? 'us-east-1'
   }

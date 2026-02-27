@@ -3,11 +3,11 @@ import type { ProductRepositoryPort } from '../../domain/ports/product.repositor
 import { Product } from '../../domain/entities/product'
 import { FindAllProductsQuery } from '../../domain/queries/find-all-products.query'
 import { Inject } from '@nestjs/common'
-import { PRODUCT_REMOTE_REPOSITORY_PORT } from '../../products-di.tokens'
+import { PRODUCT_EXTERNAL_SERVICE_ADAPTER } from '../../products-di.tokens'
 
 export class ProductsFinder implements UseCase<FindAllProductsQuery, Product[]> {
   constructor(
-    @Inject(PRODUCT_REMOTE_REPOSITORY_PORT)
+    @Inject(PRODUCT_EXTERNAL_SERVICE_ADAPTER)
     private readonly repository: ProductRepositoryPort,
   ) {}
 
